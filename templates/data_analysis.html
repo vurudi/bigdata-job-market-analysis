@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Big Data Recruitment Project - Job Market Analysis for Enhanced Recruitment">
+    <title>TalentFlow Analytics</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #3498db;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        header {
+            padding: 60px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+         h1{
+         color :blue;
+         }
+         h2{
+         color : red;
+         }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a></li>
+        <a href="/preprocess">Preprocess Data</a>
+        <a href="/skills">Skills</a></li>
+        <a href="/competence_levels">Competence Levels</a>
+        <a href="/data_analysis">Data Analysis</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/skills_analysis">Skills Analysis</a>
+        <a href="https://github.com/vurudi/ " target="_blank">Github</a>
+    </nav>
+    <h1>Data Analysis and Visualization</h1>
+
+    <!-- Display the Distribution of Competence Levels plot -->
+    <h2>Distribution of Competence Levels</h2>
+    <p>
+        This plot illustrates the distribution of competence levels among employees based on their experience levels.
+        It provides insights into the workforce's skill distribution, indicating the proportion of employees at different
+        competence levels within the organization.
+    </p>
+    <img src="data:image/png;base64,{{ competence_plot_img }}" alt="Competence Levels Plot">
+
+    <!-- Display the Word Cloud for Most Valued Skills plot -->
+    <h2>Word Cloud for Most Valued Skills</h2>
+    <p>
+        The word cloud visualizes the most valued skills across various job titles within the organization.
+        The size of each word corresponds to its frequency, providing a quick overview of the skills that are highly
+        prevalent and valued in the workforce.
+    </p>
+    <img src="data:image/png;base64,{{ skills_plot_img }}" alt="Most Valued Skills Word Cloud">
+
+    <!-- Display the Competence Levels by Job Family Heatmap plot -->
+    <h2>Competence Levels by Job Family Heatmap</h2>
+    <p>
+        This heatmap displays the association between job families and competence levels. Each cell represents
+        the count of employees within a specific job family and at a particular competence level. It offers insights
+        into the distribution of skills across different job families.
+    </p>
+    <img src="data:image/png;base64,{{ heatmap_plot_img }}" alt="Competence Levels Heatmap">
+
+
+    <!-- Display the table of Most Valued Skills -->
+        <h2>Most Valued Skills Table and  Observation:</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Skill</th>
+                    <th scope="col">Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ skills_table | safe }}
+            </tbody>
+        </table>
+
+        <h2> Observations of the Most Valued Skills ranks:</h2>
+        <section>
+            <h4>
+                The ranking of skills based on their frequency in the dataset provides insights into the most valued
+                skills within the organization. Here are some key observations:
+            </h4>
+            <p>Core Data Skills:<br> Skills like "data," "scientist," "engineer," and "analyst" occupy the top ranks. This indicates a strong emphasis on foundational skills related to data and analytics.
+            <p>Machine Learning Focus:<br> Terms like "learning," "machine," and "science" suggest a significant focus on machine learning expertise within the workforce.
+
+            <p>Leadership and Management:<br> Skills such as "manager," "lead," and "director" highlight the importance of leadership and managerial skills in the organization, suggesting a need for individuals who can guide and oversee data-related initiatives.
+
+            <p>Research and Principal Roles:<br> Terms like "research," "principal," and "consultant" indicate a focus on research-oriented and leadership roles within the organization.
+            <p>Emerging Technologies: Skills related to emerging technologies like "big data," "computer vision," and "cloud" are ranked, showcasing a commitment to staying current with technological advancements.
+
+            <p>Business and Analytics:<br> Terms like "analytics," "bi" (business intelligence), "ai" (artificial intelligence), and "business" highlight the organization's emphasis on leveraging data for business insights.
+
+            <p>Engineering and Infrastructure:<br> Skills such as "engineering," "infrastructure," and "software" suggest a strong technical focus, emphasizing the importance of building and maintaining robust data infrastructure.
+
+            <p>Specialized and Applied Skills:<br> Terms like "applied," "specialist," and "3d" indicate a need for specialized and applied skills, possibly in areas like applied machine learning, 3D modeling, and specialized data roles.
+
+            <p>Cross-Disciplinary Skills:<br> The inclusion of terms like "marketing," "product," and "finance" suggests a cross-disciplinary approach, indicating the importance of data skills in various functional areas.
+
+            <p>Organizational and Staff Roles:<br> Skills related to organizational roles like "head," "staff," and "financial" highlight the organizational and staff-related responsibilities associated with data roles.
+
+            <p>Architectural Expertise: <br>The presence of "architect" suggests a focus on architectural expertise, emphasizing the importance of designing and optimizing data architecture.
+            </p>
+        </section>
+
+        <!-- Display the table of Job Families -->
+        <h2>Job Families Table</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Job Family</th>
+                    <th scope="col">Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ job_families_table | safe }}
+            </tbody>
+        </table>
+    </div>
+
+    <section>
+        <h2>Observations on Job Family	Rank</h2>
+        <h4>The ranking of job families based on their prevalence in the dataset provides valuable insights into the distribution of roles related to data and machine learning. Here are some key observations:</h4>
+
+        <h3>Data Scientist Dominance:</h3>
+            <p>
+                The "Data Scientist" job family holds the top position, indicating its significant presence within the organization. This suggests a strong emphasis on roles focused on extracting insights and knowledge from data.
+            </p>
+
+        <h3>Diverse Engineering Roles: </h3>
+        <p>
+             Roles such as "Data Engineer," "Machine Learning Engineer," and "Big Data Engineer" are prominent in the top ranks. This indicates a robust focus on building and maintaining data infrastructure, implementing machine learning solutions, and handling big data.
+        </p>
+
+        <h3>Management and Leadership Roles: </h3>
+        <p>
+            Titles like "Data Science Manager," "Lead Data Engineer," and "Director of Data Science" are present in the upper ranks. This suggests a hierarchical structure with leadership roles overseeing data-related initiatives.
+        </p>
+
+        <h3>Specialized Roles: </h3>
+        <p>
+            Specialized roles like "Computer Vision Engineer," "Machine Learning Infrastructure Engineer," and "3D Computer Vision Researcher" are ranked, indicating a focus on cutting-edge technologies and applications within the organization.
+        </p>
+
+        <h3>Cross-Disciplinary Roles: </h3>
+        <p>
+             Titles such as "Data Science Consultant" and "Data Analytics Engineer" suggest a multidisciplinary approach, involving consulting and engineering skills in addition to traditional data science expertise.
+        </p>
+
+
+        <h3>Focus on Business and Finance: </h3>
+        <p>
+            Roles like "Business Data Analyst," "Financial Data Analyst," and "Finance Data Analyst" highlight a strategic emphasis on leveraging data for business and financial decision-making.
+        </p>
+        <h3>Organizational Leadership:</h3>
+        <p>
+            Titles like "Head of Data Science" and "Head of Data" indicate a strategic leadership presence in data-related functions, showcasing the organizational commitment to data-driven decision-making.
+        </p>
+
+        <h3>Continuous Learning and Research:</h3>
+        <p>
+            Specialized roles like "Machine Learning Scientist," "Applied Machine Learning Scientist," and "3D Computer Vision Researcher" indicate a commitment to research and development in advanced fields.
+        </p>
+
+        <h3>Architectural Roles: </h3>
+        <p>
+            Roles like "Data Architect" and "Big Data Architect" highlight the importance of architectural expertise in shaping and optimizing data infrastructure.
+        </p>
+
+        <h3>Diverse Skill Sets:</h3>
+        <p>
+        The diversity in job titles reflects a wide range of skill sets and expertise, emphasizing the need for a multidisciplinary approach to data and machine learning within the organization.
+        </p>
+    </section>
+    <footer>
+        <p>Powered by:    SOFTWARESPOT</p>
+        <p>CONTRIBUTER:   ENGINEER DOMINIC VURUDI </p>
+        <P>1.SOFTWARE ENGINEER 2. DATA ANALYST 3. MAGCHINE LEARNING ENGINEER 4. WEB DEVELOPER 5. FREELANCER</p>
+    </footer>
+
+    <!-- Include Bootstrap JS and Popper.js for Bootstrap features (optional) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

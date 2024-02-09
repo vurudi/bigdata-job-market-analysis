@@ -1,0 +1,19 @@
+# .gitignore
+
+# Ignore virtual environment
+venv/
+
+# Ignore IDE-related files (for example, IntelliJ IDEA)
+.idea/
+
+# Ignore compiled Python files
+__pycache__/
+
+# Ignore any compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local configuration files
+.env
+.vscode/

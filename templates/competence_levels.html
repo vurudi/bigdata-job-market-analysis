@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Big Data Recruitment Project - Job Market Analysis for Enhanced Recruitment">
+    <title>TalentFlow Analytics</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #3498db;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        header {
+            padding: 60px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+         h2{
+         color : red;
+         }
+         h1{
+         color : blue;
+         }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a></li>
+        <a href="/preprocess">Preprocess Data</a>
+        <a href="/skills">Skills</a></li>
+        <a href="/competence_levels">Competence Levels</a>
+        <a href="/data_analysis">Data Analysis</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/skills_analysis">Skills Analysis</a>
+        <a href="https://github.com/vurudi/" target="_blank">Github</a>
+    </nav>
+    <p>This page displays the distribution of competence levels across different job titles in the organization. The table provides a detailed breakdown of job titles along with their corresponding experience levels and competence levels. The pie chart visually represents the distribution of competence levels for each job title.</p>
+
+    <!-- Display the pie chart -->
+    <h2>Pie Chart: Competence Levels Distribution</h2>
+    <p>In this section, we characterized job families in the Big Data field based on the provided dataset.
+        <br> The analysis involved identifying homogeneous groups of Big Data skills through a clustering approach, revealing three distinct skill clusters.
+        <br> Subsequently, we delved into the competence levels associated with each job family using the 'experience_level' column.</p>
+    <img src="data:image/png;base64,{{ chart_img }}" alt="Competence Levels Pie Chart">
+    <p>
+        <div>
+         The results unveiled a comprehensive mapping of competence levels to specific job titles, offering valuable insights
+        <br>into the expertise required for various roles in the Big Data domain. This categorization facilitates a nuanced
+        <br>understanding of the skills and experience levels demanded by different job families, serving as a valuable resource
+        <br>for HR departments seeking to optimize recruitment strategies in the ever-evolving landscape of Big Data professions.
+        </div>
+
+    </p>
+    <h1>Competence Levels by Job Title</h1>
+    <p>
+        The experience level in the job during the year with the following possible values: EN Entry-level / Junior MI Mid-level / Intermediate SE Senior-level / Expert EX Executive-level / Director
+    </p>
+
+    <!-- Display the competence levels by job title -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Competence Levels</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ competence_levels_data|safe }}
+        </tbody>
+    </table>
+
+    <footer>
+        <p>Powered by:    SOFTWARESPOT</p>
+        <p>CONTRIBUTER:   ENGINEER DOMINIC VURUDI </p>
+        <P>1.SOFTWARE ENGINEER 2. DATA ANALYST 3. MAGCHINE LEARNING ENGINEER 4. WEB DEVELOPER 5. FREELANCER</p>
+    </footer>
+
+</body>
+</html>

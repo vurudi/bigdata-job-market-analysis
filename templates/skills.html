@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Big Data Recruitment Project - Job Market Analysis for Enhanced Recruitment">
+    <title>TalentFlow Analytics</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #3498db;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        header {
+            padding: 60px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+         h2{
+         color : red;
+         }
+         h1{
+         color : blue;
+         }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a></li>
+        <a href="/preprocess">Preprocess Data</a>
+        <a href="/skills">Skills</a></li>
+        <a href="/competence_levels">Competence Levels</a>
+        <a href="/data_analysis">Data Analysis</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/skills_analysis">Skills Analysis</a>
+        <a href="https://github.com/vurudi/" target="_blank">Github</a>
+    </nav>
+    <h1>Big Data Skills Analysis</h1>
+    <h3>We used machine learning clustering techniques and association rules mining to identify groups of skills. </h3>
+    <p>The Clustering results grouped the skills into three clusters (0, 1, and 2). Each skill was assigned to a cluster.
+        <br> and we can interpret these clusters as homogeneous groups of Big Data skills.</p>
+
+    <!-- Display the processed skills data -->
+    <h2>Refined Extracted Big Data Skills</h2>
+    {{ skills_data|safe }}
+
+    <footer>
+        <p>Powered by:    SOFTWARESPOT</p>
+        <p>CONTRIBUTER:   ENGINEER DOMINIC VURUDI </p>
+        <P>1.SOFTWARE ENGINEER 2. DATA ANALYST 3. MAGCHINE LEARNING ENGINEER 4. WEB DEVELOPER 5. FREELANCER</p>
+    </footer>
+</body>
+</html>
