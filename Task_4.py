@@ -7,4 +7,4 @@ def group_by_job_title(df):
     # Create a DataFrame to store the results
     result_df = pd.DataFrame({'Job Title': competence_levels.index, 'Competence Levels': competence_levels.values})
 
-    return result_df
+    return result_df    
